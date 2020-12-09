@@ -1,0 +1,22 @@
+[Unit]
+Description=Solana Daemon2
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+User=root
+Restart=always
+RestartSec=5
+LimitNOFILE=1024000
+Type=simple
+ExecStart=/root/.local/share/solana/install/active_release/bin/solana-validator \
+--identity /root/validator-keypair.json \
+--vote-account /root/vote-account-keypair.json \
+--ledger /root/validator-ledger \
+--no-untrusted-rpc \
+--limit-ledger-size=50000000 \
+--rpc-port=8899 \
+--dynamic-port-range 8002-8021 \
+--entrypoint 35.203.170.30:8001 \
+--trusted-validator 5D1fNXzvv5NjV1ysLjirC4WY92RNsVH18vjmcszZd8on \
+--expected-genesis-hash 4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQawwpjk2NsNY
