@@ -1,5 +1,5 @@
 [Unit]
-Description=Solana Daemon2
+Description=Solana Daemon
 After=network-online.target
 StartLimitIntervalSec=0
 
@@ -19,7 +19,8 @@ ExecStart=/root/.local/share/solana/install/active_release/bin/solana-validator 
 --dynamic-port-range 8002-8021 \
 --entrypoint 35.203.170.30:8001 \
 --trusted-validator 5D1fNXzvv5NjV1ysLjirC4WY92RNsVH18vjmcszZd8on \
---expected-genesis-hash 4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQawwpjk2NsNY
+--expected-genesis-hash 4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQawwpjk2NsNY \
+--log -
 
 [Install]
 WantedBy=multi-user.target
