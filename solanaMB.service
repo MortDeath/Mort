@@ -1,0 +1,32 @@
+[Unit]
+Description=Solana Daemon
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+User=root
+Restart=always
+RestartSec=5
+Type=simple
+LimitNOFILE=1024000
+Environment="SOLANA_METRICS_CONFIG="host=https://metrics.solana.com:8086,db=mainnet-beta,u=mainnet-beta_write,p=password""
+ExecStart=/root/.local/share/solana/install/active_release/bin/solana-validator \
+--identity /root/validator-keypair.json \
+--vote-account /root/vote-account-keypair.json \
+--ledger /root/validator-ledger \
+--no-untrusted-rpc \
+--private-rpc \
+--gossip-port 8001 \
+--limit-ledger-size=50000000 \
+--rpc-port=8899 \
+--dynamic-port-range 8001-8011 \
+--entrypoint mainnet-beta.solana.com:8001 \
+--trusted-validator CakcnaRDHka2gXyfbEd2d3xsvkJkqsLw2akB3zsN1D2S \
+--trusted-validator DE1bawNcRJB9rVm3buyMVfr8mBEoyyu73NBovf2oXJsJ \
+--trusted-validator GdnSyH3YtwcxFvQrVVJMm1JhTS4QVX7MFsX56uJLUfiZ \
+--trusted-validator 7Np41oeYqPefeNQEHSv1UDhYrehxin3NStELsSKCT4K2 \
+--expected-genesis-hash 5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d \
+--log -
+
+[Install]
+WantedBy=multi-user.target
