@@ -26,8 +26,6 @@ ExecStart=/root/.local/share/solana/install/active_release/bin/solana-validator 
 --trusted-validator GdnSyH3YtwcxFvQrVVJMm1JhTS4QVX7MFsX56uJLUfiZ \
 --trusted-validator 7Np41oeYqPefeNQEHSv1UDhYrehxin3NStELsSKCT4K2 \
 --expected-genesis-hash 5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d \
---accounts /root/validator-ledger/accounts/ \
---account-shrink-path /root/validator-ledger/accounts-shrink \
 --log -
 
 [Install]
