@@ -1,6 +1,7 @@
 [Unit]
 Description=Solana Daemon
 After=network-online.target
+After=tuner.service
 StartLimitIntervalSec=0
 
 [Service]
