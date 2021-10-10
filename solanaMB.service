@@ -1,5 +1,5 @@
 [Unit]
-Description=Solana Daemon
+Description=Solana Mb
 After=network-online.target
 After=tuner.service
 StartLimitIntervalSec=0
@@ -15,7 +15,7 @@ ExecStart=/root/.local/share/solana/install/active_release/bin/solana-validator 
 --identity /root/validator-keypair.json \
 --vote-account /root/vote-account-keypair.json \
 --ledger /root/validator-ledger \
---no-untrusted-rpc \
+--only-known-rpc \
 --private-rpc \
 --gossip-port 8001 \
 --limit-ledger-size=50000000 \
@@ -27,10 +27,10 @@ ExecStart=/root/.local/share/solana/install/active_release/bin/solana-validator 
 --entrypoint entrypoint3.mainnet-beta.solana.com:8001 \
 --entrypoint entrypoint4.mainnet-beta.solana.com:8001 \
 --entrypoint entrypoint5.mainnet-beta.solana.com:8001 \
---trusted-validator CakcnaRDHka2gXyfbEd2d3xsvkJkqsLw2akB3zsN1D2S \
---trusted-validator DE1bawNcRJB9rVm3buyMVfr8mBEoyyu73NBovf2oXJsJ \
---trusted-validator GdnSyH3YtwcxFvQrVVJMm1JhTS4QVX7MFsX56uJLUfiZ \
---trusted-validator 7Np41oeYqPefeNQEHSv1UDhYrehxin3NStELsSKCT4K2 \
+--known-validator CakcnaRDHka2gXyfbEd2d3xsvkJkqsLw2akB3zsN1D2S \
+--known-validator DE1bawNcRJB9rVm3buyMVfr8mBEoyyu73NBovf2oXJsJ \
+--known-validator GdnSyH3YtwcxFvQrVVJMm1JhTS4QVX7MFsX56uJLUfiZ \
+--known-validator 7Np41oeYqPefeNQEHSv1UDhYrehxin3NStELsSKCT4K2 \
 --expected-genesis-hash 5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d \
 --log -
 
