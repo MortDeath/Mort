@@ -1,6 +1,7 @@
 [Unit]
 Description=Solana TdS
 After=network.target
+After=tuner.service
 StartLimitIntervalSec=0
 
 [Service]
