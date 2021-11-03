@@ -23,7 +23,7 @@ ExecStart=/root/.local/share/solana/install/active_release/bin/solana-validator 
 --limit-ledger-size 50000000 \
 --identity /root/validator-keypair.json \
 --vote-account /root/vote-account-keypair.json \
---ledger /root/solana/validator-ledger \
+--ledger /root/validator-ledger \
 --dynamic-port-range 8000-8010 \
 --gossip-port 8001 \
 --rpc-port 8899 \
