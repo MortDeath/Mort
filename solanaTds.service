@@ -24,7 +24,7 @@ ExecStart=/root/.local/share/solana/install/active_release/bin/solana-validator 
 --identity /root/validator-keypair.json \
 --vote-account /root/vote-account-keypair.json \
 --ledger /root/validator-ledger \
---dynamic-port-range 8000-8010 \
+--dynamic-port-range 8000-8020 \
 --gossip-port 8001 \
 --rpc-port 8899 \
 --maximum-local-snapshot-age 10000 \
