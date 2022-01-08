@@ -20,7 +20,7 @@ ExecStart=/root/.local/share/solana/install/active_release/bin/solana-validator 
 --gossip-port 8001 \
 --limit-ledger-size=50000000 \
 --rpc-port=8899 \
---dynamic-port-range 8001-8011 \
+--dynamic-port-range 8001-8020 \
 --entrypoint mainnet-beta.solana.com:8001 \
 --entrypoint entrypoint.mainnet-beta.solana.com:8001 \
 --entrypoint entrypoint2.mainnet-beta.solana.com:8001 \
